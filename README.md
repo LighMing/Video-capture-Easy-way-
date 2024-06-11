@@ -6,9 +6,9 @@ This Python script captures video from the default webcam, and saves and display
 
 You must have the following libraries for Python:
 
-- OpenCV: This open-source computer vision and machine learning library is necessary for video capture and manipulation. You can install it using pip with .pip install opencv-python
+- OpenCV: This open-source computer vision and machine learning library is necessary for video capture and manipulation. You can install it using pip with **.pip install opencv-python**
 
-- NumPy: This library is used for scientific computing in Python. It can be installed with .pip install numpy
+- NumPy: This library is used for scientific computing in Python. It can be installed with **.pip install numpy**
 
 ## Usage
 To use, initialize the script in a Python environment. The script will open a new window showing the video stream from the webcam. The video stream will be saved to . To stop the video capture, press the key on your keyboard.`output.aviq`

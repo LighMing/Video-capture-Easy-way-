@@ -12,24 +12,17 @@ You must have the following libraries for Python:
 
 ## Usage
 To use, initialize the script in a Python environment. The script will open a new window showing the video stream from the webcam. The video stream will be saved to . To stop the video capture, press the key on your keyboard.output.aviq
-Understanding the Code.
 
-This script uses OpenCV's and objects for accessing the webcam and writing the video file, `respectively.VideoCaptureVideoWriter`
+## Understanding the Code.
 
-It sets up video capture through , where often refers to the default webcam. If you have multiple video inputs, you may need to change this `value.cv2.VideoCapture(0)0`
+The script uses OpenCV libraries to interact with the hardware (webcam) and capture video:
 
-The object takes four arguments:`cv2.VideoWriter`
+- It initializes a connection to the webcam with the `cv2.VideoCapture(0)` function. The parameter '0' in this function refers to the default webcam. If you have multiple webcams, you can switch between them by changing the parameter (1, 2, etc.).
 
-'output.avi': The output file name.
+- We then specify the video codec using the `cv2.VideoWriter_fourcc('XVID')` function and define a VideoWriter object. We pass the name of the output video file ('output.avi'), the specified codec, the number of frames per second (20.0), and the frame size (640x480) to this object.
 
-FourCC code: This code helps determine the codec used in the video compression. The code refers to one of the more popular codecs.*'XVID'
+- In the main loop of the program, we continuously read and display each frame. The `cap.read()` function reads the next frame from the video (webcam feed in this case). The frame is then written to the output file using `out.write(frame)`, and also displayed in an OpenCV window with the `cv2.imshow('frame', frame)` function.
 
-Frames per second: Here, we specify FPS for our video.20.0
+- The loop continues until the user presses 'q' on their keyboard, the `cv2.waitKey(1) & 0xFF == ord('q')` statement detects this. Once 'q' is detected the capture is stopped, the video file is saved, and all windows are destroyed.
 
-Frame size: The tuple refers to the dimensions of the output video.(640, 480)
-
-The script operates in a loop, capturing each frame and writing it into .whileoutput.avi
-
-The display is handled through , and the script listens for the key to break the loop and stop the video `capture.cv2.imshow()q`
-
-Upon breaking the loop, the video capture and writer are released with , and any created windows are destroyed with `.release()cv2.destroyAllWindows()`
+Bear in mind that in this script, the frames are saved as they are captured, without any flipping. However, if you need to flip each frame vertically for some reason, you can uncomment and use the command `frame = cv2.flip(frame,0)`.

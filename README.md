@@ -11,7 +11,7 @@ You must have the following libraries for Python:
 - NumPy: This library is used for scientific computing in Python. It can be installed with .pip install numpy
 
 ## Usage
-To use, initialize the script in a Python environment. The script will open a new window showing the video stream from the webcam. The video stream will be saved to . To stop the video capture, press the key on your keyboard.output.aviq
+To use, initialize the script in a Python environment. The script will open a new window showing the video stream from the webcam. The video stream will be saved to . To stop the video capture, press the key on your keyboard.`output.aviq`
 
 ## Understanding the Code.
 

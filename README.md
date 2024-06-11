@@ -4,7 +4,7 @@ This Python script captures video from the default webcam, and saves and display
 
 ## Dependencies
 
-You must have the following libraries for Python:
+-You must have the following libraries for Python:
 
 OpenCV: This open-source computer vision and machine learning library is necessary for video capture and manipulation. You can install it using pip with .pip install opencv-python
 
